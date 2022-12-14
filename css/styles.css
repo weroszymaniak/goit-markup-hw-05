@@ -103,6 +103,12 @@ body {
     color: var(--logo-text-color-blue);
 }
 
+.menu-nav-link::after {
+    content: '';
+    font-size: 1px;
+    color: var(--logo-text-color-blue);
+}
+
 .contact-header {
     color: var(--contact-color);
     font-weight: 500;
@@ -260,7 +266,7 @@ body {
     padding: 25px 100px;
     margin-bottom: 30px;
 }
-/* job */
+/* what we do */
 .job-header {
     font-weight: 700;
     font-size: 36px;
@@ -270,8 +276,35 @@ body {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.job-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .job-item {
     display: block;
+}
+.job-overlay {
+    background-color: rgba(47, 48, 58, 0.8);
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    margin: 0;
+    padding: 27px 0;
+}
+.job-text {
+    color: var(--main-white-color);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0;
 }
 /* team */
 .team {
@@ -524,4 +557,13 @@ body {
     fill: var(--main-white-color);
     border-radius: 50%;
     background-color: var(--footer-circle-bg);
+}
+
+.is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0.2;
+    transform: translateX(-20%);
+}
+.backdrop {
 }

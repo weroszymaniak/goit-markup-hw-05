@@ -79,7 +79,11 @@
                         <h1 class="hero-title">
                             Efektywne rozwiązania dla waszego biznesu
                         </h1>
-                        <button class="hero-button" type="button">
+                        <button
+                            class="hero-button"
+                            type="button"
+                            data-modal-open
+                        >
                             Zamów usługę
                         </button>
                     </div>
@@ -167,7 +171,7 @@
                 <div class="container">
                     <h2 class="job-header">Czym się zajmujemy</h2>
                     <ul class="job-list">
-                        <li>
+                        <li class="job-container">
                             <img
                                 class="job-item"
                                 src="images/what_we_do/box1.jpg"
@@ -175,8 +179,11 @@
                                 width="370"
                                 height="294"
                             />
+                            <div class="job-overlay">
+                                <p class="job-text">Aplikacje komputerowe</p>
+                            </div>
                         </li>
-                        <li>
+                        <li class="job-container">
                             <img
                                 class="job-item"
                                 src="images/what_we_do/box2.jpg"
@@ -184,8 +191,11 @@
                                 width="370"
                                 height="294"
                             />
+                            <div class="job-overlay">
+                                <p class="job-text">Aplikacje mobilne</p>
+                            </div>
                         </li>
-                        <li>
+                        <li class="job-container">
                             <img
                                 class="job-item"
                                 src="images/what_we_do/box3.jpg"
@@ -193,6 +203,9 @@
                                 width="370"
                                 height="294"
                             />
+                            <div class="job-overlay">
+                                <p class="job-text">Rozwiązania graficzne</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -665,5 +678,10 @@
                 </div>
             </div>
         </footer>
+        <div class="modal is-hidden" data-modal>
+            <button data-modal-close>X</button>
+        </div>
+
+        <script src="./js/modal.js"></script>
     </body>
 </html>
