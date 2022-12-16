@@ -71,6 +71,7 @@ body {
 .nav-section {
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .studio-nav-section {
@@ -91,11 +92,13 @@ body {
     list-style: none;
     padding-left: 93px;
     gap: 46px;
+    margin: 0;
 }
 
 .menu-nav-link {
     color: var(--logo-text-color-black);
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-nav-link:hover,
@@ -103,10 +106,18 @@ body {
     color: var(--logo-text-color-blue);
 }
 
-.menu-nav-link::after {
+.link-active {
+}
+
+.link-active::after {
     content: '';
-    font-size: 1px;
-    color: var(--logo-text-color-blue);
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--logo-text-color-blue);
+    border-radius: 2px;
+    position: relative;
+    bottom: -31px;
 }
 
 .contact-header {
@@ -118,6 +129,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0 30px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-header:hover {
@@ -209,6 +221,9 @@ body {
     border-radius: 4px;
     cursor: pointer;
     padding: 6px 22px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover {
@@ -371,6 +386,8 @@ body {
     width: 44px;
     height: 44px;
     display: block;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icon-box:hover > .team-icons-link {
@@ -424,11 +441,42 @@ body {
 .project-box {
     margin: 0px;
 }
+
+.project-card {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.project-bg {
+    background-color: rgba(33, 150, 243, 0.9);
+    width: 100%;
+    height: 294px;
+    position: absolute;
+    padding-left: 24px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    padding-top: 49px;
+}
+.project-bg-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    color: var(--main-white-color);
+    margin: 0;
+}
+
+.project-card:hover .project-bg {
+    transform: translateY(0);
+    z-index: 1;
+}
 .project-item {
     padding-bottom: 20px;
     margin-bottom: 30px;
     background: var(--main-white-color);
     border: 1px solid var(--item-border);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover {
@@ -459,6 +507,7 @@ body {
 .project-description {
     padding-left: 24px;
     padding-right: 24px;
+    z-index: 1;
 }
 
 .social-links {
@@ -499,6 +548,7 @@ body {
     padding: 16px 32px;
     fill: var(--stroke-color);
     display: block;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* footer */
@@ -557,13 +607,57 @@ body {
     fill: var(--main-white-color);
     border-radius: 50%;
     background-color: var(--footer-circle-bg);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-icons-link:hover {
+    border-radius: 50%;
+    background-color: var(--logo-text-color-blue);
+    fill: var(--main-white-color);
 }
 
 .is-hidden {
     pointer-events: none;
+    opacity: 0;
     visibility: hidden;
-    opacity: 0.2;
-    transform: translateX(-20%);
+}
+
+.modal {
+    width: 528px;
+    height: 581px;
+    background-color: var(--main-white-color);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition-property: visibility, opacity, transform;
+    transition-duration: 2s;
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 1;
+    display: block;
+}
+
+.modal-button {
+    border: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    background-color: var(--main-white-color);
+    position: absolute;
+    left: 490px;
+    top: 8px;
+    color: #000000;
+    cursor: pointer;
 }
 .backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
 }

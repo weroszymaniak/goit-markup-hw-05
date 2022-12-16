@@ -29,7 +29,9 @@
                     <nav class="nav-section">
                         <ul class="menu-nav">
                             <li>
-                                <a class="menu-nav-link" href="index.html"
+                                <a
+                                    class="menu-nav-link link-active"
+                                    href="index.html"
                                     >Agencja</a
                                 >
                             </li>
@@ -677,11 +679,15 @@
                     </ul>
                 </div>
             </div>
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                    <button type="button" class="modal-button" data-modal-close>
+                        x
+                    </button>
+                </div>
+            </div>
         </footer>
-        <div class="modal is-hidden" data-modal>
-            <button data-modal-close>X</button>
-        </div>
 
-        <script src="./js/modal.js"></script>
+        <script src="/js/modal.js"></script>
     </body>
 </html>
